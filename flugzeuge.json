@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Boeing 737-500",
+    "Leergewicht": "43910 kg",
+    "Maximalgewicht": "60500 kg",
+    "Passagiere": 132,
+    "Maximalgeschwindigkeit": "925 km/h"
+  },
+  {
+    "Name": "Boeing 737-600",
+    "Leergewicht": "41425 kg",
+    "Maximalgewicht": "70500 kg",
+    "Passagiere": 149,
+    "Maximalgeschwindigkeit": "945 km/h"
+  },
+  {
+    "Name": "Boeing 737-900",
+    "Leergewicht": "41775 kg",
+    "Maximalgewicht": "85350 kg",
+    "Passagiere": 189,
+    "Maximalgeschwindigkeit": "925 km/h"
+  },
+  {
+    "Name": "Boeing 747-500",
+    "Leergewicht": "362874 kg",
+    "Maximalgewicht": "640000 kg",
+    "Passagiere": 660,
+    "Maximalgeschwindigkeit": "988 km/h"
+  }
+]
