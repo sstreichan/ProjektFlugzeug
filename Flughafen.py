@@ -35,8 +35,9 @@ class Flughafen:
     	Returns:
     	None
     	"""
-        self.flugzeuge.append(flugzeug)
+        print(f"Eine {flugzeug.name} landet")
         flugzeug.pos = random.choice(self.parkpos)
+        self.flugzeuge.append(flugzeug)
     
     def start(self, flugzeug):
         """
@@ -59,7 +60,7 @@ class Flughafen:
             
     
     def count_flugzeuge(self):
-        pass
+        return len(self.flugzeuge)
     
     
         

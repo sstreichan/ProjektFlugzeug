@@ -11,7 +11,7 @@ class Flugzeug:
     anzahl_passagiere_gesamt = 0
     data = None
 
-    def __init__(self, _name, _speed, _passagiere, _gewicht):
+    def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):
         """
         Initialisiert eine neue Instanz der Klasse Flugzeug.
 

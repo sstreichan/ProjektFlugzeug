@@ -1,7 +1,8 @@
-import json
-import os
+import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
+from FlugzeugData import get_flugzeuge
+
 
 """
 1) Eine Klasse definieren (Klassendiagramm) 2) Implementierung:
@@ -15,33 +16,38 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 
 
 def menu():
-    result = "Was möchtest du tun?\n"
-    result += "1."
-    result += "2."
-    result += "3."
-    result += "4."
-    result += "5."
-
-
+    result = "--------------------------------------------------\n"
+    result += "Was möchtest du tun?\n"
+    result += "1. Überschicht Flughafen\n"
+    result += "2. Übersicht Flugzeuge\n"
+    result += "3. Flugzeug landen\n"
+    result += "4. Flugzeug starten\n"
+    result += "5. Exit\n"
+    result += "--------------------------------------------------\n"
     return result
 
-    
+
 Flugzeuge = [Flugzeug("Boeing 737-300", 0, 5, 100), Flugzeug("Boeing 737-700", 0, 50, 1000)]
 EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
 while True:
     print(menu())
     match input():
         case "1":
-            pass
+            print(EinFlughafen)
         case "2":
-            pass
+            for flugzeug in EinFlughafen.flugzeuge:
+                print(flugzeug)
         case "3":
-            pass
+            # Flugzeug("Boeing 737-300", 0, 5, 100)
+            neues_flugzeug = Flugzeug(random.choice(list(get_flugzeuge().keys())))
+            neues_flugzeug.passagiere_einsteigen(random.randint(0, neues_flugzeug.passagiere_max))
+            EinFlughafen.landen(neues_flugzeug)
         case "4":
             pass
         case "5":
             pass
         
+
 '''flieger1 = Flugzeuge[0]
 flieger2 = Flugzeuge[1]
 
