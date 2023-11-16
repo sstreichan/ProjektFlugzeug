@@ -1,6 +1,5 @@
 import json
 import os
-
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 
@@ -15,8 +14,35 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 """
 
 
+def menu():
+    result = "Was möchtest du tun?\n"
+    result += "1."
+    result += "2."
+    result += "3."
+    result += "4."
+    result += "5."
+
+
+    return result
+
+    
 Flugzeuge = [Flugzeug("Boeing 737-300", 0, 5, 100), Flugzeug("Boeing 737-700", 0, 50, 1000)]
-flieger1 = Flugzeuge[0]
+EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
+while True:
+    print(menu())
+    match input():
+        case "1":
+            pass
+        case "2":
+            pass
+        case "3":
+            pass
+        case "4":
+            pass
+        case "5":
+            pass
+        
+'''flieger1 = Flugzeuge[0]
 flieger2 = Flugzeuge[1]
 
 print(flieger1)
@@ -41,4 +67,4 @@ print(f"### test ###\npassagiere_gesamt: {Flugzeug.anzahl_passagiere_gesamt}")
 
 EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
 
-print(EinFlughafen)
+print(EinFlughafen)'''

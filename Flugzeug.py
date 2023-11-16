@@ -1,5 +1,5 @@
 
-from flugzeugData import get_flugzeuge
+from FlugzeugData import get_flugzeuge
 class Flugzeug:
     """
     Klasse zum Verwalten von Flugzeugen
@@ -176,3 +176,6 @@ class Flugzeug:
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():
             time.sleep(1)
+            
+            
+ 

@@ -26,7 +26,7 @@ class Flughafen:
         
     
     def landen(self, flugzeug):
-    	"""
+        """
     	Adds a given aircraft to the list of aircrafts in the airport and assigns a random parking position to the aircraft.
 
     	Parameters:
@@ -35,7 +35,6 @@ class Flughafen:
     	Returns:
     	None
     	"""
-
         self.flugzeuge.append(flugzeug)
         flugzeug.pos = random.choice(self.parkpos)
     
