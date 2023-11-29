@@ -1,7 +1,6 @@
 import random
 
-class Flughafen:
-    
+class Flughafen:    
     def __init__(self, _name, _flugzeuge, _parkpos, _personen):
         """
         Initializes a new instance of the class.
