@@ -1,6 +1,7 @@
-
 from FlugzeugData import get_flugzeuge
-class Flugzeug:
+from Fahrzeug import Fahrzeug
+
+class Flugzeug(Fahrzeug):
     """
     Klasse zum Verwalten von Flugzeugen
     Parameter:
@@ -167,7 +168,7 @@ class Flugzeug:
     def __str__(self):
         return f"{self.name} geschwindigkeit (km/h): {self.speed}/{self.speed_max} gewicht (kg): {self.gewicht}/{self.gewicht_max} passagiere: {self.passagiere}/{self.passagiere_max} verbrauch(l/km): {self.verbrauch}/100"
 
-    def start(self):             
+    def start(self):
         import time
         import pygame
         file = "sicherheitsAnweisung.mp3"

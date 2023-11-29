@@ -2,18 +2,7 @@ import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 from FlugzeugData import get_flugzeuge
-
-
-"""
-1) Eine Klasse definieren (Klassendiagramm) 2) Implementierung:
- 3 Objektattribute und 2 Klassenattribute
-
- 2) Mindestens 2 Operatoren überladen (+, größer)
-
-3) Business erstellen: Objekte erzeugen und "testen".
-Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weiter verwendet werden kann
-"""
-
+from flask import Flask, render_template
 
 def menu():
     result = "--------------------------------------------------\n"
@@ -38,7 +27,6 @@ while True:
             for flugzeug in EinFlughafen.flugzeuge:
                 print(flugzeug)
         case "3":
-            # Flugzeug("Boeing 737-300", 0, 5, 100)
             neues_flugzeug = Flugzeug(random.choice(list(get_flugzeuge().keys())))
             neues_flugzeug.passagiere_einsteigen(random.randint(0, neues_flugzeug.passagiere_max))
             EinFlughafen.landen(neues_flugzeug)
@@ -46,8 +34,23 @@ while True:
             pass
         case "5":
             pass
-        
 
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("template/index.html", head=open("template/head.html", "r").read(), content=open("template/home.html", "r").read())
+
+@app.route("/Flughafen")
+def about():
+    return render_template("template/index.html", head=open("template/head.html", "r").read(), content=open("template/Flughafen.html", "r").read())
+
+@app.route("/Flugzeuge")
+def contact():
+    return render_template("template/index.html", head=open("template/head.html", "r").read(), content=open("template/Flugzeuge.html", "r").read())
+
+app.run(debug=False)
+    
 '''flieger1 = Flugzeuge[0]
 flieger2 = Flugzeuge[1]
 
