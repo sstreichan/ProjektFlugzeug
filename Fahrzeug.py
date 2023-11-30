@@ -1,18 +1,19 @@
 import json
 
 class Fahrzeug:   
-
+    
+    
     def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):
         #self.load()
         self.name = _name
         self.speed = _speed
 
-        self.speed_max = int(Flugzeug.data[_name]["speed"])
-        self.gewicht_leer = int(Flugzeug.data[_name]["leerGewicht"])
-        self.gewicht_max = int(Flugzeug.data[_name]["maximalGewicht"])
-        self.passagiere_max = int(Flugzeug.data[_name]["passagiere"])
-        self.tank = int(Flugzeug.data[_name]["tank"])
-        self.reichweite = int(Flugzeug.data[_name]["reichweite"])
+        self.speed_max = int(self.data[_name]["speed"])
+        self.gewicht_leer = int(self.data[_name]["leerGewicht"])
+        self.gewicht_max = int(self.data[_name]["maximalGewicht"])
+        self.passagiere_max = int(self.data[_name]["passagiere"])
+        self.tank = int(self.data[_name]["tank"])
+        self.reichweite = int(self.data[_name]["reichweite"])
         self.verbrauch = round(self.tank / self.reichweite * 100)
         self.gewicht = _gewicht
         self.passagiere = 0

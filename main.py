@@ -18,7 +18,7 @@ def menu():
 
 
 Flugzeuge = [Flugzeug("Boeing 737-300", 0, 5, 100), Flugzeug("Boeing 737-700", 0, 50, 1000)]
-Feuerwehren = [Feuerwehr()]
+Feuerwehren = [Feuerwehr("Löschgruppenfahrzeug")]
 EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
 while True:
     print(menu())

@@ -10,9 +10,8 @@ class Flugzeug(Fahrzeug):
 
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
-    data = None
 
-    def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):
+    def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):        
         """
         Initialisiert eine neue Instanz der Klasse Flugzeug.
 
@@ -25,11 +24,9 @@ class Flugzeug(Fahrzeug):
         Erzeugt:
             KeyError: Wenn der Name des Flugzeugs nicht in der Datenbank gefunden wird.
         """
-
-        if Flugzeug.data is None:
-            #with open(f"{dir_path}\\flugzeuge.json", "r", encoding="utf-8") as jsonfile:
-            #    Flugzeug.data = json.load(jsonfile)
-            Flugzeug.data = get_flugzeuge()
+        self.load(__name__)
+        super().__init__(_name, _speed=0, _passagiere=0, _gewicht=0)
+        
 
         try:
             # Objektvariablen
