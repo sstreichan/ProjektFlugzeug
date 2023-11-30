@@ -50,30 +50,5 @@ def contact():
     return render_template("template/index.html", head=open("template/head.html", "r").read(), content=open("template/Flugzeuge.html", "r").read())
 
 app.run(debug=False)
-    
-'''flieger1 = Flugzeuge[0]
-flieger2 = Flugzeuge[1]
-
-print(flieger1)
-
-print(f"### test ###\nbeschleunigen\n{flieger1.speed}")
-flieger1.beschleunigen(200)
-print(flieger1.speed)
-
-print(f"### test ###\n+ und -")
-print(flieger1 + flieger2)
-print(flieger1 - flieger2)
-
-print(
-    f"### test ###\nist {flieger1.name} besser als {flieger2.name}?\n{flieger1 > flieger2}"
-)
-
-print(f"### test ###\nanzahl_flugzeuge: {Flugzeug.anzahl_flugzeuge}")
-print(f"### test ###\npassagiere_gesamt: {Flugzeug.anzahl_passagiere_gesamt}")
-
-#flieger1.start()
 
 
-EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
-
-print(EinFlughafen)'''
