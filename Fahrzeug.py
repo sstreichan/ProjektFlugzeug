@@ -1,10 +1,8 @@
 import json
 
-class Fahrzeug:   
-    
-    
+class Fahrzeug:
     def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):
-        #self.load()
+
         self.name = _name
         self.speed = _speed
 
@@ -22,7 +20,7 @@ class Fahrzeug:
         
         
     def load(self, name):
-        f = open(f"{name}.json", "r")
+        f = open(f"{name}.json", "r", encoding="utf8")
         self.data = json.loads(f.read())
         print(self.data)
 

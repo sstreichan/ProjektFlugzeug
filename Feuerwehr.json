@@ -3,63 +3,63 @@
       "passagiere": 6,
       "Löschmittel": ["Wasser", "Schaum"],
       "Ausstattung": ["Feuerlöscher", "Atemschutzgeräte", "Tragbare Pumpen"],
-      "tank": "500-2000 Liter",
-      "leerGewicht": "7,000 kg",
-      "maximalGewicht": "12,000 kg",
-      "speed": "90 km/h",
-      "reichweite": "300 km"
+      "tank": 2000,
+      "leerGewicht": 7000,
+      "maximalGewicht": 12000,
+      "speed": 90,
+      "reichweite": 300
     },
     "Drehleiter": {
       "passagiere": 3,
       "Höhenrettung": "Bis zu 30 Meter",
       "Löschmittel": ["Wasser"],
       "Ausstattung": ["Rettungskorb", "Leiter", "Atemschutzgeräte"],
-      "tank": "100-500 Liter",
-      "leerGewicht": "12,000 kg",
-      "maximalGewicht": "18,000 kg",
-      "speed": "80 km/h",
-      "reichweite": "250 km"
+      "tank": 500,
+      "leerGewicht": 12000,
+      "maximalGewicht": 18000,
+      "speed": 80,
+      "reichweite": 250
     },
     "Tanklöschfahrzeug": {
       "Löschmittel": ["Wasser", "Schaum"],
-      "tank": "3000-10000 Liter",
+      "tank": 10000,
       "Ausstattung": ["Pumpe", "Schläuche", "Schnellangriffseinrichtung"],
-      "leerGewicht": "10,000 kg",
-      "maximalGewicht": "20,000 kg",
-      "speed": "100 km/h",
-      "reichweite": "350 km"
+      "leerGewicht": 10000,
+      "maximalGewicht": 20000,
+      "speed": 100,
+      "reichweite": 350
     },
     "Flugfeldlöschfahrzeug": {
-      "passagiere": "2-4 Personen",
+      "passagiere": 4,
       "Löschmittel": ["Spezialschaum"],
       "Ausstattung": ["Großer Wassertank", "Löscharm für Flugzeugbrände", "Rettungskorb"],
-      "tank": "Über 10,000 Liter",
-      "leerGewicht": "18,000 kg",
-      "maximalGewicht": "30,000 kg",
-      "speed": "120 km/h",
-      "reichweite": "250 km"
+      "tank": 10000,
+      "leerGewicht": 18000,
+      "maximalGewicht": 30000,
+      "speed": 120,
+      "reichweite": 250
     },
     "Rüstwagen": {
       "Einsatzbereiche": "Technische Hilfeleistung",
       "Ausstattung": ["Hydraulische Rettungsgeräte", "Beleuchtung", "Werkzeug"],
-      "passagiere": "3-6 Personen",
+      "passagiere": 6,
       "Löschmittel": ["Wasser"],
-      "tank": "Begrenzt",
-      "leerGewicht": "8,000 kg",
-      "maximalGewicht": "14,000 kg",
-      "speed": "90 km/h",
-      "reichweite": "300 km"
+      "tank": 0,
+      "leerGewicht": 8000,
+      "maximalGewicht": 14000,
+      "speed": 90,
+      "reichweite": 300
     },
     "Gerätewagen Gefahrgut": {
       "Einsatzbereiche": "Gefahrguteinsätze",
       "Ausstattung": ["Schutzanzüge", "Messgeräte", "Ausrüstung für Gefahrguteinsätze"],
-      "passagiere": "2-4 Personen",
+      "passagiere": 4,
       "Löschmittel": ["Spezielle Mittel zur Gefahrgutbekämpfung"],
-      "tank": "Begrenzt",
-      "leerGewicht": "9,000 kg",
-      "maximalGewicht": "15,000 kg",
-      "speed": "80 km/h",
-      "reichweite": "200 km"
+      "tank": 0,
+      "leerGewicht": 9000,
+      "maximalGewicht": 15000,
+      "speed": 80,
+      "reichweite": 200
     },
     "Wechselladerfahrzeug": {
       "Aufbau": "Wechselbehälter für verschiedene Einsatzzwecke",
@@ -67,9 +67,9 @@
       "passagiere": "Abhängig vom Wechselbehälter",
       "Löschmittel": "Abhängig vom Wechselbehälter",
       "tank": "Abhängig vom Wechselbehälter",
-      "leerGewicht": "15,000 kg",
-      "maximalGewicht": "25,000 kg",
-      "speed": "90 km/h",
-      "reichweite": "400 km"
+      "leerGewicht": "15,000",
+      "maximalGewicht": "25,000",
+      "speed": "90",
+      "reichweite": "400"
     }
   }
