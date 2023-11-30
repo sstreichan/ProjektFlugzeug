@@ -199,5 +199,5 @@ def get_flugzeuge():
 
 
 # Daten in JSON-Datei speichern
-# with open(f"{dir_path}flugzeugdaten.json", "w") as json_datei:
-#    json.dump(get_flugzeuge(), json_datei, indent=2)
+with open(f"Flugzeug.json", "w") as json_datei:
+    json.dump(get_flugzeuge(), json_datei, indent=2)

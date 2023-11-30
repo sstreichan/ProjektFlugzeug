@@ -33,20 +33,7 @@ class Flugzeug(Fahrzeug):
 
         try:
             # Objektvariablen
-            self.name = _name
-            self.speed = _speed
-
-            self.speed_max = int(Flugzeug.data[_name]["speed"])
-            self.gewicht_leer = int(Flugzeug.data[_name]["leerGewicht"])
-            self.gewicht_max = int(Flugzeug.data[_name]["maximalGewicht"])
-            self.passagiere_max = int(Flugzeug.data[_name]["passagiere"])
-            self.tank = int(Flugzeug.data[_name]["tank"])
-            self.reichweite = int(Flugzeug.data[_name]["reichweite"])
-            self.verbrauch = round(self.tank / self.reichweite * 100)
-            self.gewicht = _gewicht
-            self.passagiere = 0
-            self.passagiere_einsteigen(_passagiere)
-            self.pos = ""
+            #self.maxFlughoehe = 
             Flugzeug.anzahl_flugzeuge += 1
             Flugzeug.anzahl_passagiere_gesamt += _passagiere
         except KeyError:

@@ -6,15 +6,11 @@
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0"/>
                 <mxCell id="a_EGpLdE-8I7ZxJAhZ7y-4" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zkfFHV4jXpPFQw0GAbJ--0" target="a_EGpLdE-8I7ZxJAhZ7y-0" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="170" y="-790" as="targetPoint"/>
+                        <mxPoint x="350" y="-462" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="zkfFHV4jXpPFQw0GAbJ--0" value="Flugzeug" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=1;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-<<<<<<< HEAD
-                    <mxGeometry x="40" y="-738" width="260" height="170" as="geometry">
-=======
                     <mxGeometry x="220" y="-410" width="260" height="170" as="geometry">
->>>>>>> 634618fba6b8056a9e7464b14ad08cd8c337db6f
                         <mxRectangle x="220" y="50" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -28,11 +24,7 @@
                     <mxGeometry y="98" width="260" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="a_EGpLdE-8I7ZxJAhZ7y-0" value="Fahrzeug" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=1;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-<<<<<<< HEAD
-                    <mxGeometry x="40" y="-1120" width="260" height="312" as="geometry">
-=======
                     <mxGeometry x="220" y="-792" width="260" height="312" as="geometry">
->>>>>>> 634618fba6b8056a9e7464b14ad08cd8c337db6f
                         <mxRectangle x="220" y="50" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -42,30 +34,6 @@
                 <mxCell id="a_EGpLdE-8I7ZxJAhZ7y-2" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="a_EGpLdE-8I7ZxJAhZ7y-0" vertex="1">
                     <mxGeometry y="200" width="260" height="8" as="geometry"/>
                 </mxCell>
-<<<<<<< HEAD
-                <mxCell id="0" value="&lt;span style=&quot;&quot;&gt;beschleunigen(wert) float&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;bremsen(wert) float&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;passagiere_einsteigen(wert) void&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;passagiere_aussteigen(wert): void&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="a_EGpLdE-8I7ZxJAhZ7y-0" vertex="1">
-                    <mxGeometry y="208" width="260" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="" style="edgeStyle=none;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="1" target="a_EGpLdE-8I7ZxJAhZ7y-1" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="490" y="-1007"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="1" value="Feuerwehr" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=1;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-                    <mxGeometry x="360" y="-738" width="260" height="136" as="geometry">
-                        <mxRectangle x="220" y="50" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="5" value="wasser: int&lt;br&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry y="26" width="260" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="1" vertex="1">
-                    <mxGeometry y="56" width="260" height="10" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="__str__(): string&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
-=======
                 <mxCell id="0" value="&lt;span style=&quot;&quot;&gt;beschleunigen(wert) float&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;bremsen(wert) float&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;passagiere_einsteigen(wert) void&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;passagiere_aussteigen(wert): void&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="a_EGpLdE-8I7ZxJAhZ7y-0">
                     <mxGeometry y="208" width="260" height="70" as="geometry"/>
                 </mxCell>
@@ -88,14 +56,13 @@
                     <mxGeometry y="56" width="260" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="__str__(): string&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
->>>>>>> 634618fba6b8056a9e7464b14ad08cd8c337db6f
                     <mxGeometry y="66" width="260" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="TYIyRXOuca1dYvEWABh8" name="Flughafen">
-        <mxGraphModel dx="1428" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="676" dy="435" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>

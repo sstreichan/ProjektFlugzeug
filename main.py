@@ -1,6 +1,7 @@
 import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
+from Feuerwehr import Feuerwehr
 from FlugzeugData import get_flugzeuge
 from flask import Flask, render_template
 
@@ -17,6 +18,7 @@ def menu():
 
 
 Flugzeuge = [Flugzeug("Boeing 737-300", 0, 5, 100), Flugzeug("Boeing 737-700", 0, 50, 1000)]
+Feuerwehren = [Feuerwehr()]
 EinFlughafen = Flughafen("IBB", Flugzeuge, ["Terminal 1", "Terminal 2", "Halle 1"], 1)
 while True:
     print(menu())
