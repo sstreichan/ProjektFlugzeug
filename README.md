@@ -18,3 +18,5 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
    3. Exit
 3. testen
 4. WebUI                                        ✔️
+
+

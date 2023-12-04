@@ -1,6 +1,7 @@
 import random
+from Gebaeude import Gebaeude
 
-class Flughafen:
+class Flughafen(Gebaeude):
     parkpos = ["Terminal 1", "Terminal 2", "Halle 1"]
     
     def __init__(self, _name, _flugzeuge, _personen):
@@ -76,4 +77,7 @@ class Flughafen:
                 if flugzeug.pos == pos:
                     result += f"\t{flugzeug.name}\n"
         return result
+    
+    def Gebaeude_reinigen(self):
+        return "Das gebäude wurde gereinigt."
         

@@ -41,7 +41,7 @@ contents = [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get
 
 def get_contents():
     return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()]]
-    
+
 def render_page(contentName, text=None):
     with open("templates/index.html", "r", encoding="utf8") as f:
         result = f.read()
@@ -67,11 +67,11 @@ def home():
     return render_page("home")
 
 @app.route("/Flughafen")
-def about():
+def Flughafen():
     return render_page("Flughafen")
 
 @app.route("/Flugzeuge")
-def contact():
+def Flugzeuge():
     return render_page("Flugzeuge")
 
 @app.route("/Flugzeug_landen")
@@ -83,6 +83,10 @@ def Flugzeug_landen():
 def Flugzeug_starten():
     return render_page("FlugzeugStarten")
 
+@app.route("/Gebaeude_reinigen")
+def Gebaeude_reinigen():
+    text = EinFlughafen.Gebaeude_reinigen()
+    return render_page("GebaeudeReinigen", EinFlughafen.Gebaeude_reinigen())
 
 # Webserver starten
-app.run(port=80, debug=False)
+app.run(host="0.0.0.0", port=80, debug=False)

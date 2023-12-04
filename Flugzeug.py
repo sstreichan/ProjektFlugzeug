@@ -17,7 +17,6 @@ class Flugzeug(Fahrzeug):
         self.load(__name__)
         super().__init__(_name, _speed, _passagiere, _gewicht)
         
-        # Objektvariablen
         self.maxFlughoehe = int(self.data["maxFlughoehe"])
         Flugzeug.anzahl_flugzeuge += 1
         Flugzeug.anzahl_passagiere_gesamt += _passagiere
@@ -84,5 +83,3 @@ class Flugzeug(Fahrzeug):
         while pygame.mixer.music.get_busy():
             time.sleep(1)
             
-
- 
