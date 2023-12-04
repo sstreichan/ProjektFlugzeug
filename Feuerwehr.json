@@ -1,75 +1,92 @@
 {
-    "Löschgruppenfahrzeug": {
-      "passagiere": 6,
-      "Löschmittel": ["Wasser", "Schaum"],
-      "Ausstattung": ["Feuerlöscher", "Atemschutzgeräte", "Tragbare Pumpen"],
-      "tank": 2000,
-      "leerGewicht": 7000,
-      "maximalGewicht": 12000,
-      "speed": 90,
-      "reichweite": 300
-    },
-    "Drehleiter": {
-      "passagiere": 3,
-      "Höhenrettung": "Bis zu 30 Meter",
-      "Löschmittel": ["Wasser"],
-      "Ausstattung": ["Rettungskorb", "Leiter", "Atemschutzgeräte"],
-      "tank": 500,
-      "leerGewicht": 12000,
-      "maximalGewicht": 18000,
-      "speed": 80,
-      "reichweite": 250
-    },
-    "Tanklöschfahrzeug": {
-      "Löschmittel": ["Wasser", "Schaum"],
-      "tank": 10000,
-      "Ausstattung": ["Pumpe", "Schläuche", "Schnellangriffseinrichtung"],
-      "leerGewicht": 10000,
-      "maximalGewicht": 20000,
-      "speed": 100,
-      "reichweite": 350
-    },
-    "Flugfeldlöschfahrzeug": {
-      "passagiere": 4,
-      "Löschmittel": ["Spezialschaum"],
-      "Ausstattung": ["Großer Wassertank", "Löscharm für Flugzeugbrände", "Rettungskorb"],
-      "tank": 10000,
-      "leerGewicht": 18000,
-      "maximalGewicht": 30000,
-      "speed": 120,
-      "reichweite": 250
-    },
-    "Rüstwagen": {
-      "Einsatzbereiche": "Technische Hilfeleistung",
-      "Ausstattung": ["Hydraulische Rettungsgeräte", "Beleuchtung", "Werkzeug"],
-      "passagiere": 6,
-      "Löschmittel": ["Wasser"],
-      "tank": 0,
-      "leerGewicht": 8000,
-      "maximalGewicht": 14000,
-      "speed": 90,
-      "reichweite": 300
-    },
-    "Gerätewagen Gefahrgut": {
-      "Einsatzbereiche": "Gefahrguteinsätze",
-      "Ausstattung": ["Schutzanzüge", "Messgeräte", "Ausrüstung für Gefahrguteinsätze"],
-      "passagiere": 4,
-      "Löschmittel": ["Spezielle Mittel zur Gefahrgutbekämpfung"],
-      "tank": 0,
-      "leerGewicht": 9000,
-      "maximalGewicht": 15000,
-      "speed": 80,
-      "reichweite": 200
-    },
-    "Wechselladerfahrzeug": {
-      "Aufbau": "Wechselbehälter für verschiedene Einsatzzwecke",
-      "Einsatzbereiche": "Flexible Anpassung an verschiedene Aufgaben",
-      "passagiere": "Abhängig vom Wechselbehälter",
-      "Löschmittel": "Abhängig vom Wechselbehälter",
-      "tank": "Abhängig vom Wechselbehälter",
-      "leerGewicht": "15,000",
-      "maximalGewicht": "25,000",
-      "speed": "90",
-      "reichweite": "400"
-    }
+  "Rosenbauer Panther 8x8": {
+    "leerGewicht": 20000,
+    "maximalGewicht": 35000,
+    "passagiere": 2,
+    "maximaleGeschwindigkeit": 120,
+    "tank": 5000,
+    "reichweite": 300,
+    "loeschwassermenge": 8000
+  },
+  "E-ONE Titan Force": {
+    "leerGewicht": 18000,
+    "maximalGewicht": 32000,
+    "passagiere": 3,
+    "maximaleGeschwindigkeit": 110,
+    "tank": 4500,
+    "reichweite": 280,
+    "loeschwassermenge": 7500
+  },
+  "Oshkosh Striker": {
+    "leerGewicht": 22000,
+    "maximalGewicht": 38000,
+    "passagiere": 4,
+    "maximaleGeschwindigkeit": 130,
+    "tank": 5500,
+    "reichweite": 320,
+    "loeschwassermenge": 8500
+  },
+  "Sides S3000": {
+    "leerGewicht": 19000,
+    "maximalGewicht": 34000,
+    "passagiere": 2,
+    "maximaleGeschwindigkeit": 115,
+    "tank": 4800,
+    "reichweite": 270,
+    "loeschwassermenge": 7200
+  },
+  "Ziegler Z8": {
+    "leerGewicht": 21000,
+    "maximalGewicht": 36000,
+    "passagiere": 3,
+    "maximaleGeschwindigkeit": 125,
+    "tank": 5200,
+    "reichweite": 290,
+    "loeschwassermenge": 7800
+  },
+  "Panther 6x6": {
+    "leerGewicht": 19500,
+    "maximalGewicht": 35000,
+    "passagiere": 2,
+    "maximaleGeschwindigkeit": 118,
+    "tank": 4900,
+    "reichweite": 280,
+    "loeschwassermenge": 7600
+  },
+  "Morita Chita": {
+    "leerGewicht": 23000,
+    "maximalGewicht": 40000,
+    "passagiere": 4,
+    "maximaleGeschwindigkeit": 135,
+    "tank": 5800,
+    "reichweite": 330,
+    "loeschwassermenge": 9000
+  },
+  "E-ONE Rapid Intervention Vehicle (RIV)": {
+    "leerGewicht": 17500,
+    "maximalGewicht": 31000,
+    "passagiere": 3,
+    "maximaleGeschwindigkeit": 108,
+    "tank": 4400,
+    "reichweite": 260,
+    "loeschwassermenge": 7300
+  },
+  "Ziegler Z6": {
+    "leerGewicht": 20000,
+    "maximalGewicht": 36000,
+    "passagiere": 2,
+    "maximaleGeschwindigkeit": 122,
+    "tank": 5100,
+    "reichweite": 280,
+    "loeschwassermenge": 7700
+  },
+  "Oshkosh H-Series": {
+    "leerGewicht": 21500,
+    "maximalGewicht": 37000,
+    "passagiere": 3,
+    "maximaleGeschwindigkeit": 128,
+    "tank": 5400,
+    "reichweite": 300,
+    "loeschwassermenge": 8000
   }
+}

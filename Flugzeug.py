@@ -1,40 +1,27 @@
-from FlugzeugData import get_flugzeuge
 from Fahrzeug import Fahrzeug
 
 class Flugzeug(Fahrzeug):
     """
-    Klasse zum Verwalten von Flugzeugen
-    Parameter:
-        geschwindigkeit, name, anzahl_passagiere, gewicht
+        Args:
+            _name (str): The name of the vehicle. random vehicle is chosen if empty.
+            _speed (int): The speed of the object. Defaults to 0.
+            _passagiere (int): The number of passengers. Defaults to 0. -1 For Random.
+            _gewicht (int): The weight of the object. Defaults to 0.
+        Raises:
+            KeyError: If the name of the vehicle is not found in the database.
     """
-
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
 
-    def __init__(self, _name, _speed=0, _passagiere=0, _gewicht=0):        
-        """
-        Initialisiert eine neue Instanz der Klasse Flugzeug.
-
-        Args:
-            _name (str): Der Name des Flugzeugs.
-            _speed (int): Die aktuelle Geschwindigkeit des Flugzeugs.
-            _passagiere (int): Die Anzahl der Passagiere, die im Flugzeug sind.
-            _gewicht (int): Das Gewicht der ladung des Flugzeugs.
-
-        Erzeugt:
-            KeyError: Wenn der Name des Flugzeugs nicht in der Datenbank gefunden wird.
-        """
+    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
         self.load(__name__)
-        super().__init__(_name, _speed=0, _passagiere=0, _gewicht=0)
+        super().__init__(_name, _speed, _passagiere, _gewicht)
         
+        # Objektvariablen
+        self.maxFlughoehe = int(self.data["maxFlughoehe"])
+        Flugzeug.anzahl_flugzeuge += 1
+        Flugzeug.anzahl_passagiere_gesamt += _passagiere
 
-        try:
-            # Objektvariablen
-            #self.maxFlughoehe = 
-            Flugzeug.anzahl_flugzeuge += 1
-            Flugzeug.anzahl_passagiere_gesamt += _passagiere
-        except KeyError:
-            print(f"Flugzeug {_name} nicht in der Datenbank")
 
     def __add__(self, other):
         """
@@ -66,35 +53,26 @@ class Flugzeug(Fahrzeug):
         """
         self_p = 0
         other_p = 0
-        if self.speed_max > other.speed_max:
-            self_p += 1
-        else:
-            other_p += 1
-        if self.gewicht_max > other.gewicht_max:
-            self_p += 1
-        else:
-            other_p += 1
-        if self.passagiere_max > other.passagiere_max:
-            self_p += 1
-        else:
-            other_p += 1
-        if self.reichweite > other.reichweite:
-            self_p += 1
-        else:
-            other_p += 1
-        if self.speed_max > other.speed_max:
-            self_p += 1
-        else:
-            other_p += 1
-        if self.verbrauch < other.verbrauch:
-            self_p += 1
-        else:
-            other_p += 1
+        if self.speed_max > other.speed_max: self_p += 1
+        else: other_p += 1
+        if self.gewicht_max > other.gewicht_max: self_p += 1
+        else: other_p += 1
+        if self.passagiere_max > other.passagiere_max: self_p += 1
+        else: other_p += 1
+        if self.reichweite > other.reichweite: self_p += 1
+        else: other_p += 1
+        if self.speed_max > other.speed_max: self_p += 1
+        else: other_p += 1
+        if self.verbrauch < other.verbrauch: self_p += 1
+        else: other_p += 1
 
         return self_p > other_p
 
     def __str__(self):
-        return f"{self.name} geschwindigkeit (km/h): {self.speed}/{self.speed_max} gewicht (kg): {self.gewicht}/{self.gewicht_max} passagiere: {self.passagiere}/{self.passagiere_max} verbrauch(l/km): {self.verbrauch}/100"
+        return (
+            f"{super().__str__()} "
+            f"max Flughöhe(m): {self.maxFlughoehe}"
+            )
 
     def start(self):
         import time
@@ -106,5 +84,5 @@ class Flugzeug(Fahrzeug):
         while pygame.mixer.music.get_busy():
             time.sleep(1)
             
-            
+
  
