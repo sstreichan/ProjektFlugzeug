@@ -125,7 +125,7 @@
     "reichweite": 7700,
     "maxFlughoehe": 13106
   },
-  "boeing 767-200": {
+  "Boeing 767-200": {
     "leerGewicht": 90001,
     "maximalGewicht": 179170,
     "passagiere": 181,
@@ -134,7 +134,7 @@
     "reichweite": 6030,
     "maxFlughoehe": 13130
   },
-  "boeing 767-300": {
+  "Boeing 767-300": {
     "leerGewicht": 91636,
     "maximalGewicht": 181610,
     "passagiere": 218,
@@ -143,7 +143,7 @@
     "reichweite": 6100,
     "maxFlughoehe": 13130
   },
-  "boeing 767-400": {
+  "Boeing 767-400": {
     "leerGewicht": 91999,
     "maximalGewicht": 187700,
     "passagiere": 245,

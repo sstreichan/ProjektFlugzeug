@@ -38,18 +38,22 @@ class Flughafen(Gebaeude):
         
         return (f"Eine {flugzeug.name} landet")
     
-    def start(self, flugzeug):
+    def start(self, flugzeug = None):
         """
-        Removes the specified flugzeug from the list of flugzeuge and updates its position to "Luft".
+        Removes the specified flugzeug from the list of flugzeuge.
 
         Parameters:
             flugzeug (Flugzeug): The flugzeug object to be removed.
 
         Returns:
-            None
+            string
         """
-        self.flugzeuge.remove(flugzeug)
-        flugzeug.pos = "Luft"
+        if len(self.flugzeuge) > 0:
+            if flugzeug is None:
+                flugzeug = random.choice(self.flugzeuge)
+            self.flugzeuge.remove(flugzeug)
+            return f"{flugzeug.name} ist gestartet."
+        else: return "Kein Flugzeug auf dem flughafen!"
     
     def count_personen(self):
         personenTemp = self.personen

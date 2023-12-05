@@ -14,9 +14,8 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 1. Oberklasse für Projekt konzipieren (UML)     ✔️
 2. implementieren
    1. Feuerwehr daten                           ✔️
-   2. Flugzeug starten
-   3. Exit
-3. testen
+   2. Flugzeug starten                          ✔️
+3. testen                                       ✔️
 4. WebUI                                        ✔️
 
 

@@ -41,7 +41,7 @@ class Fahrzeug:
         Returns:
             None
         """
-        f = open(f"{name}.json", "r", encoding="utf8")
+        f = open(f"./data/{name}.json", "r", encoding="utf8")
         self.data = json.loads(f.read())
 
     def beschleunigen(self, wert):

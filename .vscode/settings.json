@@ -1,0 +1,6 @@
+{
+    "python.autoComplete.extraPaths": [
+
+    ],
+    "pip-installer.enable": true
+}
