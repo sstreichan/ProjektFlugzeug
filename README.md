@@ -19,3 +19,7 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 4. WebUI                                        ✔️
 
 
+**Aufgaben Teil 3:**
+
+1. Umsteigen (Flugzeug -> Flugzeug)
+2. Aussteigen (Flugzeug -> Flughafen)

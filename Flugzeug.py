@@ -21,7 +21,6 @@ class Flugzeug(Fahrzeug):
         Flugzeug.anzahl_flugzeuge += 1
         Flugzeug.anzahl_passagiere_gesamt += _passagiere
 
-
     def __add__(self, other):
         """
         addiert Gewicht der Flugzeuge
@@ -82,4 +81,9 @@ class Flugzeug(Fahrzeug):
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():
             time.sleep(1)
-            
+
+    
+    def Umsteigen(self, other):
+        result = ""
+        
+        return result

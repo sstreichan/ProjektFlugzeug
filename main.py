@@ -6,7 +6,7 @@ from Feuerwehr import Feuerwehr
 from flask import Flask, render_template
 
 
-EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1), Flugzeug(_passagiere=-1)], 1)
+EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.randint(5,10))], 1)
 
 Feuerwehren = [Feuerwehr]
 
@@ -31,7 +31,7 @@ def render_page(contentName, text=None):
         result = result.replace("$text$", text)
     return result
 
-def main():        
+def main():
     app = Flask(__name__)
 
     @app.route("/")
@@ -59,8 +59,18 @@ def main():
     @app.route("/Gebaeude_reinigen")
     def Gebaeude_reinigen():
         text = EinFlughafen.Gebaeude_reinigen()
-        return render_page("GebaeudeReinigen", EinFlughafen.Gebaeude_reinigen())
+        return render_page("GebaeudeReinigen", text)
 
+    @app.route("/aussteigen")
+    def aussteigen():
+        text = EinFlughafen.aussteigen()
+        return render_page("aussteigen", text)
+    
+    @app.route("/umsteigen")
+    def umsteigen():
+        text = ""
+        return render_page("umsteigen", text)
+    
     # Webserver starten
 
     app.run(port=8080, debug=False)

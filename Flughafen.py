@@ -55,6 +55,12 @@ class Flughafen(Gebaeude):
             return f"{flugzeug.name} ist gestartet."
         else: return "Kein Flugzeug auf dem flughafen!"
     
+    def aussteigen(self, flugzeug):
+        result = ""
+        
+        return result
+    
+    
     def count_personen(self):
         personenTemp = self.personen
         for flugzeug in self.flugzeuge:
@@ -83,5 +89,5 @@ class Flughafen(Gebaeude):
         return result
     
     def Gebaeude_reinigen(self):
-        return "Das gebäude wurde gereinigt."
+        return f"Das Gebäude {self.name} wurde gereinigt."
         
