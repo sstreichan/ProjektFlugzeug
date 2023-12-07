@@ -3,7 +3,7 @@ from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 from Feuerwehr import Feuerwehr
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.randint(5,10))], 1)
@@ -11,7 +11,7 @@ EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.
 Feuerwehren = [Feuerwehr]
 
 def get_contents():
-    return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()]]
+    return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()], ["$FlugzeugeDropDown$", EinFlughafen.get_FlugzeugeDropDown()]]
 
 def render_page(contentName, text=None):
     with open("templates/index.html", "r", encoding="utf8") as f:
@@ -68,6 +68,9 @@ def main():
     
     @app.route("/umsteigen")
     def umsteigen():
+        flugzeug = request.args.get('flugzeug')
+        if flugzeug is not None:
+            EinFlughafen.flugzeuge[flugzeug]
         text = ""
         return render_page("umsteigen", text)
     

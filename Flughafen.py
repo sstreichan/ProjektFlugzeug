@@ -77,6 +77,15 @@ class Flughafen(Gebaeude):
         for flugzeug in self.flugzeuge:
             result += f"{flugzeug}\n"
         return result
+    
+    def get_FlugzeugeDropDown(self):
+        ###  rekusiv ###
+        '''
+        soll einen string zurück geben in diesem format
+        für jedes flugzeug jeweils:
+        <option>flugzeug name</option>
+        '''
+        pass
 
     def get_parkPos(self):
         result = ""

@@ -70,7 +70,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="ksPFIGAJBLskk0MnnyNh-1" value="class Flughafen" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=1;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="250" y="350" width="260" height="220" as="geometry">
+                    <mxGeometry x="250" y="350" width="260" height="260" as="geometry">
                         <mxRectangle x="220" y="50" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -80,8 +80,8 @@
                 <mxCell id="ksPFIGAJBLskk0MnnyNh-3" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="ksPFIGAJBLskk0MnnyNh-1" vertex="1">
                     <mxGeometry y="100" width="260" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="ksPFIGAJBLskk0MnnyNh-4" value="flugzeug_landen(): void&#10;flugzeug_starten(): void&#10;count_personen(): int&#10;count_flugzeuge(): int&#10;__str__(): string&#10;get_flugzeuge(): string&#10;aussteigen(flugzeug): string" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ksPFIGAJBLskk0MnnyNh-1" vertex="1">
-                    <mxGeometry y="108" width="260" height="112" as="geometry"/>
+                <mxCell id="ksPFIGAJBLskk0MnnyNh-4" value="flugzeug_landen(): void&#10;flugzeug_starten(): void&#10;count_personen(): int&#10;count_flugzeuge(): int&#10;__str__(): string&#10;get_flugzeuge(): string&#10;get_FlugzeugeDropDown(): string&#10;aussteigen(flugzeug): string" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ksPFIGAJBLskk0MnnyNh-1" vertex="1">
+                    <mxGeometry y="108" width="260" height="142" as="geometry"/>
                 </mxCell>
                 <mxCell id="BaKExmYVio5iCVP4UsTa-1" value="abc Gebäude" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=1;strokeWidth=1;" parent="1" vertex="1">
                     <mxGeometry x="250" y="50" width="260" height="240" as="geometry">

@@ -23,3 +23,4 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 
 1. Umsteigen (Flugzeug -> Flugzeug)
 2. Aussteigen (Flugzeug -> Flughafen)
+3. get_FlugzeugeDropDown Implementieren
