@@ -57,6 +57,7 @@ class Flughafen(Gebaeude):
     
     def aussteigen(self, flugzeug):
         result = ""
+        flugzeug.passagiere_aussteigen
         
         return result
     

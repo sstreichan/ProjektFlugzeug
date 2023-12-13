@@ -23,4 +23,16 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 
 1. Umsteigen (Flugzeug -> Flugzeug)
 2. Aussteigen (Flugzeug -> Flughafen)
-3. get_FlugzeugeDropDown Implementieren
+3. get_FlugzeugeDropDown Implementieren (rekusiv)
+4. business case erstellen
+5. test cases erstellen
+6. gebäude klassendiagram
+
+
+
+klassendiagram:
+   return werte
+   konstructor
+   parameter die übergeben werden
+   Modifikatoren
+
