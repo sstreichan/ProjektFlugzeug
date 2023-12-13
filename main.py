@@ -3,6 +3,7 @@ from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 from Feuerwehr import Feuerwehr
 
+# Import der webserver library
 from flask import Flask, render_template, request
 
 
@@ -14,6 +15,7 @@ def get_contents():
     return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()], ["$FlugzeugeDropDown$", EinFlughafen.get_FlugzeugeDropDown()]]
 
 def render_page(contentName, text=None):
+    # Einzelne Templates zusammenbauen.
     with open("templates/index.html", "r", encoding="utf8") as f:
         result = f.read()
     with open("templates/head.html", "r", encoding="utf8") as f:
@@ -23,6 +25,7 @@ def render_page(contentName, text=None):
     with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
         result = result.replace("$content$", f.read())
 
+    # Ersetzen der platzhalter
     for content in get_contents():
         result = result.replace(content[0], content[1].replace("\n", "<br \>"))
         result = result.replace(content[0], content[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"))        
@@ -31,9 +34,11 @@ def render_page(contentName, text=None):
         result = result.replace("$text$", text)
     return result
 
+
 def main():
     app = Flask(__name__)
 
+    # Zuweisung der urls zu den entsprechenden methoden.
     @app.route("/")
     def home():
         return render_page("home")
