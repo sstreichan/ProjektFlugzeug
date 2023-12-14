@@ -57,8 +57,11 @@ class Flughafen(Gebaeude):
     
     def aussteigen(self, flugzeug):
         result = ""
-        flugzeug.passagiere_aussteigen
+        passagiereTemp = flugzeug.passagiere
+        self.personen += passagiereTemp
+        flugzeug.passagiere_aussteigen(passagiereTemp)
         
+        result = f"Es sind {passagiereTemp} ausgestiegen."
         return result
     
     
@@ -79,14 +82,18 @@ class Flughafen(Gebaeude):
             result += f"{flugzeug}\n"
         return result
     
-    def get_FlugzeugeDropDown(self):
+    def get_FlugzeugeDropDown(self, text="", count=0):
         ###  rekusiv ###
         '''
         soll einen string zurück geben in diesem format
         für jedes flugzeug jeweils:
         <option>flugzeug name</option>
         '''
-        pass
+        if count == len(self.flugzeuge):
+            return text
+
+        return f"<option>{self.flugzeuge[count].name}</option> {self.get_FlugzeugeDropDown(text, count+1)}"        
+        
 
     def get_parkPos(self):
         result = ""

@@ -11,7 +11,7 @@ EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.
 Feuerwehren = [Feuerwehr]
 
 def get_contents():
-    return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()], '''["$FlugzeugeDropDown$", EinFlughafen.get_FlugzeugeDropDown()]''']
+    return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()], ["$FlugzeugeDropDown$", EinFlughafen.get_FlugzeugeDropDown()]]
 
 def render_page(contentName, text=None):
     with open("templates/index.html", "r", encoding="utf8") as f:
@@ -64,7 +64,9 @@ def main():
 
     @app.route("/aussteigen")
     def aussteigen():
-        text = EinFlughafen.aussteigen()
+        flugzeug = request.args.get('flugzeug')
+        if flugzeug is not None:
+            text = EinFlughafen.aussteigen()
         return render_page("aussteigen", text)
     
     @app.route("/umsteigen")

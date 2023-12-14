@@ -79,9 +79,10 @@ class Fahrzeug:
             self.passagiere += wert
             self.gewicht += round(wert * 81.6)
         else:
-            raise Exception(
-                f"das flugzeug ist voll! {self.passagiere + wert}/{self.passagiere_max}"
-            )
+            pass
+            '''raise Exception(
+                f"das flugzeug ist voll! {self._passagiere + wert}/{self.passagiere_max}"
+            )'''
 
     def passagiere_aussteigen(self, wert):
         """
