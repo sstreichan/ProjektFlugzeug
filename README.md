@@ -35,8 +35,7 @@ klassendiagram:
    konstructor
    parameter die übergeben werden
    Modifikatoren
-
-
+   
 Klassendaigramm erstellen (UML , PPP)                                         ✔️
 Busines Cases Use Cases erstellen
 Testfälle erstellen (Testabdeckung)
@@ -55,6 +54,6 @@ min 2 Überladung von Operatoren                                               �
 überschreiben von Methoden                                                    ✔️
 Startpunkt (echte Main erstellen)                                             ✔️
 Rekusion                                                                      ✔️
-implementieren von Daten (Wave, MP3, CSV, ect.)
+implementieren von Daten (Wave, MP3, CSV, ect.)                               ✔️
 Biblothek einbinden (TensorFlow, SciPY, Pandas, NumPy…)                       ✔️
 datenbank

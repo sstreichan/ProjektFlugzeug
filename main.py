@@ -65,18 +65,24 @@ def main():
     @app.route("/aussteigen")
     def aussteigen():
         flugzeug = request.args.get('flugzeug')
+        text = ""
         if flugzeug is not None:
-            print(flugzeug)
-            text = EinFlughafen.aussteigen()
+            for i in range(len(EinFlughafen.flugzeuge)):
+                if flugzeug == EinFlughafen.flugzeuge[i].name:
+                    text = EinFlughafen.aussteigen(EinFlughafen.flugzeuge[i])
+                    return render_page("umsteigen", text)
         return render_page("aussteigen", text)
     
     @app.route("/umsteigen")
     def umsteigen():
         flugzeug = request.args.get('flugzeug')
-        if flugzeug is not None:
-            print(flugzeug)
-            EinFlughafen.flugzeuge[flugzeug]
         text = ""
+        if flugzeug is not None:
+            for i in range(len(EinFlughafen.flugzeuge)):
+                if flugzeug == EinFlughafen.flugzeuge[i].name:
+                    text = EinFlughafen.aussteigen(EinFlughafen.flugzeuge[i])
+                    return render_page("umsteigen", text)
+        
         return render_page("umsteigen", text)
     
     # Webserver starten

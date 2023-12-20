@@ -99,7 +99,6 @@ class Fahrzeug:
             self.gewicht -= round(wert * 81.6)
         else:
             raise Exception("nicht genug passagiere im flugzeug!")
-        self.passagiere -= wert
 
     def __str__(self):
         return (
