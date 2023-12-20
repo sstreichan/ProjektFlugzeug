@@ -66,6 +66,7 @@ def main():
     def aussteigen():
         flugzeug = request.args.get('flugzeug')
         if flugzeug is not None:
+            print(flugzeug)
             text = EinFlughafen.aussteigen()
         return render_page("aussteigen", text)
     
@@ -73,6 +74,7 @@ def main():
     def umsteigen():
         flugzeug = request.args.get('flugzeug')
         if flugzeug is not None:
+            print(flugzeug)
             EinFlughafen.flugzeuge[flugzeug]
         text = ""
         return render_page("umsteigen", text)

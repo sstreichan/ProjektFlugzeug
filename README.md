@@ -37,24 +37,24 @@ klassendiagram:
    Modifikatoren
 
 
-Klassendaigramm erstellen (UML , PPP)
+Klassendaigramm erstellen (UML , PPP)                                         ✔️
 Busines Cases Use Cases erstellen
 Testfälle erstellen (Testabdeckung)
-einfache Verärbung realiesieren
-merfach Verärbung realiesieren (min. eine abstarakte Klasse) MRO 
-Ordnerstruktur erstellen (Import Struktur)
-Methoden überschreiben
+einfache Verärbung realiesieren                                               ✔️
+merfach Verärbung realiesieren (min. eine abstarakte Klasse) MRO              ✔️
+Ordnerstruktur erstellen (Import Struktur)                                    ✔️
 Exe file
 Doc String und Kommentare (für Klassen und Methoden)
-Versionsführung (Githup)
-ver. Datensstrukturen (Dictinary, Mengen, )
+Versionsführung (Github)                                                      ✔️
+ver. Datensstrukturen (Dictinary, Mengen, )                                   ✔️
 min. 2 PAP (kann auch Struktugramm sein, Pseudocode)
-min. eine Rekursion
+min. eine Rekursion                                                           ✔️
 Testing
 Scope ( Global Non Local, Mutable, Inmutable)
-min 2 Überladung von Operatoren 
-überschreiben von Methoden
-Startpunkt (echte Main erstellen)
-Rekusion 
+min 2 Überladung von Operatoren                                               ✔️
+überschreiben von Methoden                                                    ✔️
+Startpunkt (echte Main erstellen)                                             ✔️
+Rekusion                                                                      ✔️
 implementieren von Daten (Wave, MP3, CSV, ect.)
-Biblothek einbinden (TensorFlow, SciPY, Pandas, NumPy…)
+Biblothek einbinden (TensorFlow, SciPY, Pandas, NumPy…)                       ✔️
+datenbank
