@@ -5,6 +5,18 @@ from Flughafen import Flughafen
 
 class Fahrzeug:
     def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
+        """
+        Initialisiert eine neue Instanz der Klasse.
+
+        Parameter:
+            _name (str): Der Name des Fahrzeugs. Falls leer, wird ein zufälliger Name gewählt.
+            _speed (int): Die Geschwindigkeit des Fahrzeugs.
+            _passagiere (int): Die Anzahl der Passagiere im Fahrzeug.
+            _gewicht (int): Das Gewicht des Fahrzeugs.
+
+        Rückgabe:
+            Keine
+        """
         try:
             if _name == "":
                 _name = random.choice(list(self.data.keys()))
@@ -31,18 +43,20 @@ class Fahrzeug:
         except KeyError:
             print(f"Fahrzeug {_name} nicht in der Datenbank")
 
+
     def load(self, name):
         """
-        Load the data from a JSON file into the `data` attribute.
+        Lädt Daten aus einer JSON-Datei und aktualisiert das 'data'-Attribut der Klasse.
 
-        Parameters:
-            name (str): The name of the JSON file to load.
+        Args:
+            name (str): Der Name der JSON-Datei (ohne die Dateierweiterung).
 
         Returns:
             None
         """
-        f = open(f"./data/{name}.json", "r", encoding="utf8")
-        self.data = json.loads(f.read())
+        with open(f"./data/{name}.json", "r", encoding="utf8") as f:
+            self.data = json.loads(f.read())
+
 
     def beschleunigen(self, wert):
         """
@@ -98,6 +112,13 @@ class Fahrzeug:
             raise Exception("nicht genug passagiere im flugzeug!")
 
     def __str__(self):
+        """
+        Gibt eine formatierte Zeichenkette (String) zurück, die Informationen über das Objekt enthält.
+
+        Returns:
+            str: Eine formatierte Zeichenkette mit den Attributen des Objekts, einschließlich Name, Geschwindigkeit,
+                Gewicht, Anzahl der Passagiere und Verbrauch.
+        """
         return (
             f"{self.name} geschwindigkeit (km/h): {self.speed}/{self.speed_max} "
             f"gewicht (kg): {self.gewicht}/{self.gewicht_max} passagiere: "
