@@ -83,18 +83,11 @@ class Flughafen(Gebaeude):
         return result
     
     def get_FlugzeugeDropDown(self, text="", count=0):
-        ###  rekusiv ###
-        '''
-        soll einen string zurück geben in diesem format
-        für jedes flugzeug jeweils:
-        <option>flugzeug name</option>
-        '''
         if count == len(self.flugzeuge):
             return text
 
         return f"<option>{self.flugzeuge[count].name}</option> {self.get_FlugzeugeDropDown(text, count+1)}"        
         
-
     def get_parkPos(self):
         result = ""
         

@@ -85,8 +85,12 @@ def main():
         
         return render_page("umsteigen", text)
     
-    # Webserver starten
+    @app.route("/view")
+    def view():
 
+        return render_page("view", text)
+
+    
     app.run(port=8080, debug=False)
 
 
