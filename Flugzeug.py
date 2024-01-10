@@ -13,13 +13,18 @@ class Flugzeug(Fahrzeug):
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
 
-    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
+    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0, flugnummer="", abflugzeit="", ankunftzeit="", fluggesellschaft=""):
         self.load(__name__)
         super().__init__(_name, _speed, _passagiere, _gewicht)
         
         self.maxFlughoehe = int(self.data["maxFlughoehe"])
         Flugzeug.anzahl_flugzeuge += 1
         Flugzeug.anzahl_passagiere_gesamt += _passagiere
+        
+        self.flugnummer = flugnummer
+        self.abflugzeit = abflugzeit
+        self.ankunftzeit = ankunftzeit
+        self.fluggesellschaft = fluggesellschaft
 
     def __add__(self, other):
         """
