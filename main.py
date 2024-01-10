@@ -2,7 +2,8 @@ import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 from Feuerwehr import Feuerwehr
-
+import json
+from datetime import datetime
 from flask import Flask, render_template, request
 
 
@@ -39,6 +40,16 @@ def main():
     def home():
         return render_page("home")
 
+    @app.route("/Flugplan")
+    def Flugplan():
+        with open("data\Flugzeug.json", "r") as file:
+            data = json.load(file)
+        sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: item[1]["Flugdaten"]["abflugzeit"])}
+        
+        
+
+        return render_template("Flugplan.html", data=sorted_data)
+    
     @app.route("/Flughafen")
     def Flughafen():
         return render_page("Flughafen")
