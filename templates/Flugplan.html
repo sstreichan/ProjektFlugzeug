@@ -18,8 +18,8 @@
     {% for plane_model, flight_data in data.items() %}
         <tr>
             <td>{{ flight_data['Flugdaten']['flugnummer'] }}</td>
-            <td>{{ flight_data['Flugdaten']['abflugzeit'] }}</td>
-            <td>{{ flight_data['Flugdaten']['ankunftzeit'] }}</td>
+            <td>{{ flight_data['Flugdaten']['abflugzeit'].strftime("%H:%M") }}</td>
+            <td>{{ flight_data['Flugdaten']['ankunftzeit'].strftime("%H:%M") }}</td>
             <td>{{ flight_data['Flugdaten']['fluggesellschaft'] }}</td>
         </tr>
         {% endfor %}
