@@ -4,7 +4,7 @@ class Flugzeug(Fahrzeug):
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
     
-    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
+    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0, flugnummer="", abflugzeit="", ankunftzeit="", fluggesellschaft=""):
         """
         Initialisiert ein Flugzeug-Objekt unter Berücksichtigung der geladenen Daten.
 

@@ -48,7 +48,7 @@ def render_page(contentName, text=None):
     with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
         result = result.replace("$content$", f.read())
 
-    for content in get_contents():
+    for content in get_contents(EinFlughafen):
         result = result.replace(content[0], content[1].replace("\n", "<br \>"))
         result = result.replace(content[0], content[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"))        
 
@@ -134,7 +134,7 @@ def main():
         return render_page("view", text)
 
     
-    app.run(port=8080, debug=False)
+    app.run(port=8080, debug=True)
 
 
 if __name__ == '__main__':
