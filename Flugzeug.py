@@ -29,6 +29,8 @@ class Flugzeug(Fahrzeug):
         self.ankunftzeit = ankunftzeit
         self.fluggesellschaft = fluggesellschaft
 
+    
+    ''' obsolete
     def __add__(self, other):
         """
         addiert Gewicht der Flugzeuge
@@ -48,7 +50,8 @@ class Flugzeug(Fahrzeug):
             Differenz Anzahl der Passagiere in den Flugzeugen
         """
         return self.gewicht - other.gewicht
-
+    
+    
     def __gt__(self, other):
         """
         vergleicht ob das Flugzeug besser ist
@@ -73,25 +76,21 @@ class Flugzeug(Fahrzeug):
         else: other_p += 1
 
         return self_p > other_p
-
+    '''
     def __str__(self):
+        """
+        Gibt eine formatierte Zeichenkette mit Informationen über das Flugzeug zurück.
+
+        Returns:
+            str: Eine formatierte Zeichenkette mit dem Namen, der Geschwindigkeit, der Anzahl der Passagiere, dem Gewicht und der maximalen Flughöhe.
+        """
         return (
             f"{super().__str__()} "
             f"max Flughöhe(m): {self.maxFlughoehe}"
-            )
+        )
 
-    def start(self):
-        import time
-        import pygame
-        file = "sicherheitsAnweisung.mp3"
-        pygame.mixer.init()
-        pygame.mixer.music.load(file)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            time.sleep(1)
-
-    
+    ''' obsolete    
     def Umsteigen(self, other):
-        result = ""
-        
+        result = ""        
         return result
+    '''

@@ -25,7 +25,8 @@ class Flughafen(Gebaeude):
             str: Eine formatierte Zeichenkette mit dem Namen, der Anzahl der Flugzeuge, der Anzahl der Personen und den Parkpositionen.
         """
         return f"name: {self.name}\nFlugzeuge: {self.count_flugzeuge()}\nPersonen: {self.count_personen()}\n Parkpositionen:\n{self.get_parkPos()}"
-
+    
+    ''' obsolete
     def landen(self, flugzeug):
         """
         Lässt ein Flugzeug auf dem Flughafen landen, weist ihm eine zufällige Parkposition zu und fügt es zur Liste der Flugzeuge hinzu.
@@ -58,7 +59,7 @@ class Flughafen(Gebaeude):
 
         self.flugzeuge.remove(flugzeug)
         return f"{flugzeug.name} ist gestartet."
-
+     
     def aussteigen(self, flugzeug):
         """
         Lässt Passagiere aus einem Flugzeug aussteigen, erhöht die Anzahl der Personen auf dem Flughafen und aktualisiert die Passagierliste des Flugzeugs.
@@ -76,7 +77,7 @@ class Flughafen(Gebaeude):
 
         result = f"Es sind {passagiereTemp} ausgestiegen."
         return result
-   
+    '''
     
     def count_personen(self):
         """
@@ -143,7 +144,8 @@ class Flughafen(Gebaeude):
                 if flugzeug.pos == pos:
                     result += f"\t{flugzeug.name}\n"
         return result
-
+    
+    ''' obsolete  
     def Gebaeude_reinigen(self):
         """
         Gibt eine Meldung über die Reinigung des Flughafengebäudes zurück.
@@ -152,5 +154,5 @@ class Flughafen(Gebaeude):
             str: Eine Meldung über die Reinigung des Flughafengebäudes.
         """
         return f"Das Gebäude {self.name} wurde gereinigt."
-
+    '''
         

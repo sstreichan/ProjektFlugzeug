@@ -57,7 +57,7 @@ class Fahrzeug:
         with open(f"./data/{name}.json", "r", encoding="utf8") as f:
             self.data = json.loads(f.read())
 
-
+    ''' obsolete 
     def beschleunigen(self, wert):
         """
         Erhöht die aktuelle Geschwindigkeit des Flugzeugs um den angegebenen Wert.
@@ -110,7 +110,7 @@ class Fahrzeug:
             self.gewicht -= round(wert * 81.6)
         else:
             raise Exception("nicht genug passagiere im flugzeug!")
-
+    '''
     def __str__(self):
         """
         Gibt eine formatierte Zeichenkette (String) zurück, die Informationen über das Objekt enthält.
