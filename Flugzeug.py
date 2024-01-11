@@ -1,19 +1,22 @@
 from Fahrzeug import Fahrzeug
 
 class Flugzeug(Fahrzeug):
-    """
-        Args:
-            _name (str): The name of the vehicle. random vehicle is chosen if empty.
-            _speed (int): The speed of the object. Defaults to 0.
-            _passagiere (int): The number of passengers. Defaults to 0. -1 For Random.
-            _gewicht (int): The weight of the object. Defaults to 0.
-        Raises:
-            KeyError: If the name of the vehicle is not found in the database.
-    """
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
+    
+    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
+        """
+        Initialisiert ein Flugzeug-Objekt unter Berücksichtigung der geladenen Daten.
 
-    def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0, flugnummer="", abflugzeit="", ankunftzeit="", fluggesellschaft=""):
+        Args:
+            _name (str, optional): Der Name des Flugzeugs.
+            _speed (int, optional): Die Geschwindigkeit des Flugzeugs.
+            _passagiere (int, optional): Die Anzahl der Passagiere im Flugzeug.
+            _gewicht (int, optional): Das Gewicht des Flugzeugs.
+
+        Returns:
+            None
+        """
         self.load(__name__)
         super().__init__(_name, _speed, _passagiere, _gewicht)
         

@@ -11,10 +11,34 @@ EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.
 
 Feuerwehren = [Feuerwehr]
 
-def get_contents():
-    return [["$Flughafen$", f"{EinFlughafen}"], ["$Flugzeuge$", EinFlughafen.get_flugzeuge()], ["$FlugzeugeDropDown$", EinFlughafen.get_FlugzeugeDropDown()]]
+def get_contents(einFlughafen):
+    """
+    Gibt eine Liste von Inhalten zurück, die in der HTML-Seite eingefügt werden sollen.
+
+    Args:
+        einFlughafen (Flughafen): Das Flughafen-Objekt, dessen Informationen in die Seite eingefügt werden sollen.
+
+    Returns:
+        list: Eine Liste von Listen, wobei jede innere Liste den Platzhalter und den zugehörigen Inhalt enthält.
+    """
+    return [
+        ["$Flughafen$", f"{einFlughafen}"],
+        ["$Flugzeuge$", einFlughafen.get_flugzeuge()],
+        ["$FlugzeugeDropDown$", einFlughafen.get_FlugzeugeDropDown()]
+    ]
+
 
 def render_page(contentName, text=None):
+    """
+    Rendert eine HTML-Seite basierend auf Vorlagen und Inhalten.
+
+    Args:
+        contentName (str): Der Name des Inhalts, der gerendert werden soll.
+        text (str, optional): Ein zusätzlicher Text, der in die Seite eingefügt werden soll.
+
+    Returns:
+        str: Der gerenderte HTML-Code für die Seite.
+    """
     with open("templates/index.html", "r", encoding="utf8") as f:
         result = f.read()
     with open("templates/head.html", "r", encoding="utf8") as f:
@@ -24,7 +48,6 @@ def render_page(contentName, text=None):
     with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
         result = result.replace("$content$", f.read())
 
-    
     for content in get_contents():
         result = result.replace(content[0], content[1].replace("\n", "<br \>"))
         result = result.replace(content[0], content[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"))        
@@ -33,9 +56,16 @@ def render_page(contentName, text=None):
         result = result.replace("$text$", text)
     return result
 
+
 def main():
     app = Flask(__name__)
 
+    """
+        Route für die Jeweiligen Seiten.
+
+        Returns:
+            str: Die gerenderte HTML-Seite für die Homepage.
+    """
     @app.route("/")
     def home():
         return render_page("home")
