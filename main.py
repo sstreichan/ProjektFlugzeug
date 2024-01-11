@@ -2,7 +2,8 @@ import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 from Feuerwehr import Feuerwehr
-
+import json
+from datetime import datetime
 from flask import Flask, render_template, request
 
 
@@ -47,7 +48,7 @@ def render_page(contentName, text=None):
     with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
         result = result.replace("$content$", f.read())
 
-    for content in get_contents():
+    for content in get_contents(EinFlughafen):
         result = result.replace(content[0], content[1].replace("\n", "<br \>"))
         result = result.replace(content[0], content[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"))        
 
@@ -69,6 +70,17 @@ def main():
     def home():
         return render_page("home")
 
+    @app.route("/Flugplan")
+    def Flugplan():
+        with open("data\Flugzeug.json", "r") as file:
+            data = json.load(file)
+        sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: item[1]["Flugdaten"]["abflugzeit"])}
+        
+        for plane_model, flight_data in data.items(): flight_data["Flugdaten"]["abflugzeit"] = datetime.strptime(flight_data["Flugdaten"]["abflugzeit"], "%Y-%m-%dT%H:%M:%S.%f")
+        for plane_model, flight_data in data.items(): flight_data["Flugdaten"]["ankunftzeit"] = datetime.strptime(flight_data["Flugdaten"]["ankunftzeit"], "%Y-%m-%dT%H:%M:%S.%f")
+
+        return render_template("Flugplan.html", data=sorted_data)
+    
     @app.route("/Flughafen")
     def Flughafen():
         return render_page("Flughafen")
@@ -115,13 +127,15 @@ def main():
         
         return render_page("umsteigen", text)
     
+    
+    
     @app.route("/view")
     def view():
 
         return render_page("view", text)
 
     
-    app.run(port=8080, debug=False)
+    app.run(port=8080, debug=True)
 
 
 if __name__ == '__main__':
