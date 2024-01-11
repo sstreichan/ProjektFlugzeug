@@ -5,7 +5,7 @@ from Feuerwehr import Feuerwehr
 import json
 from datetime import datetime
 from flask import Flask, render_template, request
-
+import os
 
 EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.randint(5,10))], 1)
 
@@ -27,7 +27,19 @@ def get_contents(einFlughafen):
         ["$FlugzeugeDropDown$", einFlughafen.get_FlugzeugeDropDown()]
     ]
 
-
+def get_Fluggesellschaft():
+    Fluggesellschaften = ["SkyLink Airways", "Horizon Wings",
+        "CelestialJet",
+        "AeroVista Airlines",
+        "StarLift Air",
+        "CloudSail Airlines",
+        "BlueSky Express",
+        "SolarWings International",
+        "VelocityAir",
+        "NovaJet Airways"
+    ]
+    return random.choice(Fluggesellschaften)
+    
 def render_page(contentName, text=None):
     """
     Rendert eine HTML-Seite basierend auf Vorlagen und Inhalten.
@@ -43,10 +55,16 @@ def render_page(contentName, text=None):
         result = f.read()
     with open("templates/head.html", "r", encoding="utf8") as f:
         result = result.replace("$head$", f.read())
+
+    
     with open("templates/nav.html", "r", encoding="utf8") as f:
         result = result.replace("$nav$", f.read())
-    with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
-        result = result.replace("$content$", f.read())
+
+    if os.path.exists(f"templates/{contentName}.html"):
+        with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
+            result = result.replace("$content$", f.read())
+    else:
+        result = result.replace("$content$", contentName)
 
     for content in get_contents(EinFlughafen):
         result = result.replace(content[0], content[1].replace("\n", "<br \>"))
@@ -66,20 +84,27 @@ def main():
         Returns:
             str: Die gerenderte HTML-Seite für die Homepage.
     """
+    ''' obsolete
     @app.route("/")
     def home():
         return render_page("home")
+    '''
 
-    @app.route("/Flugplan")
+    @app.route("/")
     def Flugplan():
-        with open("data\Flugzeug.json", "r") as file:
+        with open("data/Flugzeug.json", "r") as file:
             data = json.load(file)
         sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: item[1]["Flugdaten"]["abflugzeit"])}
         
         for plane_model, flight_data in data.items(): flight_data["Flugdaten"]["abflugzeit"] = datetime.strptime(flight_data["Flugdaten"]["abflugzeit"], "%Y-%m-%dT%H:%M:%S.%f")
         for plane_model, flight_data in data.items(): flight_data["Flugdaten"]["ankunftzeit"] = datetime.strptime(flight_data["Flugdaten"]["ankunftzeit"], "%Y-%m-%dT%H:%M:%S.%f")
-
-        return render_template("Flugplan.html", data=sorted_data)
+        
+        #sorted_data.append(get_Fluggesellschaft())
+        result = render_template("Flugplan.html", data=sorted_data)
+        return render_page(result)
+    @app.route("/Erweitert")
+    def Erweitert():
+        pass
     
     @app.route("/Flughafen")
     def Flughafen():

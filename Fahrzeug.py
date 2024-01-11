@@ -35,10 +35,7 @@ class Fahrzeug:
             self.verbrauch = round(self.tank / self.reichweite * 100)
             self.gewicht = _gewicht
             self.passagiere = 0
-            if _passagiere == -1:
-                self.passagiere_einsteigen(random.randint(0, self.passagiere_max))
-            else:
-                self.passagiere_einsteigen(_passagiere)
+
             self.pos = random.choice(Flughafen.parkpos)
         except KeyError:
             print(f"Fahrzeug {_name} nicht in der Datenbank")
@@ -56,7 +53,7 @@ class Fahrzeug:
         """
         with open(f"./data/{name}.json", "r", encoding="utf8") as f:
             self.data = json.loads(f.read())
-
+    
     ''' obsolete 
     def beschleunigen(self, wert):
         """
