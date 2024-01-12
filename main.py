@@ -84,6 +84,7 @@ def main():
         Returns:
             str: Die gerenderte HTML-Seite für die Homepage.
     """
+    
     ''' obsolete
     @app.route("/")
     def home():
@@ -91,7 +92,7 @@ def main():
     '''
 
     @app.route("/")
-    def Flugplan():
+    def home():
         with open("data/Flugzeug.json", "r") as file:
             data = json.load(file)
         sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: item[1]["Flugdaten"]["abflugzeit"])}
@@ -102,9 +103,10 @@ def main():
         #sorted_data.append(get_Fluggesellschaft())
         result = render_template("Flugplan.html", data=sorted_data)
         return render_page(result)
+    
     @app.route("/Erweitert")
     def Erweitert():
-        pass
+        return "todo"
     
     @app.route("/Flughafen")
     def Flughafen():
@@ -151,13 +153,6 @@ def main():
                     return render_page("umsteigen", text)
         
         return render_page("umsteigen", text)
-    
-    
-    
-    @app.route("/view")
-    def view():
-
-        return render_page("view", text)
 
     
     app.run(port=8080, debug=True)
