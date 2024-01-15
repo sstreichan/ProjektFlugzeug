@@ -6,7 +6,6 @@ a = Analysis(
     binaries=[],
     datas=[('./data/', './data/')],
     hiddenimports=[],
-    hooksconfig={},
     runtime_hooks=[],
     excludes=[],
     noarchive=False,
