@@ -1,7 +1,7 @@
 import json
 import random
 from Flughafen import Flughafen 
-
+import Utilities
 
 class Fahrzeug:
     def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
@@ -51,8 +51,12 @@ class Fahrzeug:
         Returns:
             None
         """
-        with open(f"./data/{name}.json", "r", encoding="utf8") as f:
-            self.data = json.loads(f.read())
+        try:
+            with open(f"{Utilities.get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
+                self.data = json.loads(f.read())
+        except FileNotFoundError:
+            with open(f"/data/{name}.json", "r", encoding="utf8") as f:
+                self.data = json.loads(f.read())
     
     ''' obsolete 
     def beschleunigen(self, wert):
