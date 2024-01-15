@@ -1,6 +1,6 @@
 **Aufgaben Teil 1:**
 
-1. Eine Klasse definieren (Klassendiagramm)              ✔️
+1. Eine Klasse definieren (Klassendiagramm)               ✔️
 2. Implementierung:                                       ✔️
    1. Objektattribute und 2 Klassenattribute              ✔️
    2. Mindestens 2 Operatoren überladen (+, größer)       ✔️
@@ -13,7 +13,7 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 
 1. Oberklasse für Projekt konzipieren (UML)              ✔️
 2. implementieren                                        ✔️
-   1. Feuerwehr daten                                    ✔️
+   1. Feuerwehrdaten                                     ✔️
    2. Flugzeug starten                                   ✔️
 3. testen                                             ️
 4. WebUI                                                 ✔️
@@ -24,28 +24,28 @@ Muss: gut kommentieren, docstring benutzen, so arbeiten, dass die Codierung weit
 1. Umsteigen (Flugzeug -> Flugzeug)
 2. Aussteigen (Flugzeug -> Flughafen)                    ✔️
 3. get_FlugzeugeDropDown Implementieren (rekusiv)        ✔️
-4. business case erstellen
-5. test cases erstellen
-6. gebäude klassendiagram                                ✔️
+4. Businesscase erstellen
+5. Testcases erstellen
+6. Gebäude Klassendiagramm                               ✔️
 
 
 
 klassendiagram:
    return werte
-   konstructor
+   Konstruktor
    parameter die übergeben werden
    Modifikatoren
    
-Klassendaigramm erstellen (UMBusines Cases Use Cases erstellenL , PPP)                                         ✔️
+Klassendaigramm erstellen (UMBusines Cases Use Cases erstellenL , PPP)        ✔️
 
 Testfälle erstellen (Testabdeckung)
-einfache Verärbung realiesieren                                               ✔️
-merfach Verärbung realiesieren (min. eine abstarakte Klasse) MRO              ✔️
+einfache Verärbung realisieren                                                ✔️
+merfach Verärbung realisieren (min. eine abstrakte Klasse - MRO)              ✔️
 Ordnerstruktur erstellen (Import Struktur)                                    ✔️
 Exe file
 Doc String und Kommentare (für Klassen und Methoden)
 Versionsführung (Github)                                                      ✔️
-ver. Datensstrukturen (Dictinary, Mengen, )                                   ✔️
+ver. Datenstrukturen (Dictionary, Mengen, )                                   ✔️
 min. 2 PAP (kann auch Struktugramm sein, Pseudocode)
 min. eine Rekursion                                                           ✔️
 Testing
@@ -53,11 +53,11 @@ Scope ( Global Non Local, Mutable, Inmutable)
 min 2 Überladung von Operatoren                                               ✔️
 überschreiben von Methoden                                                    ✔️
 Startpunkt (echte Main erstellen)                                             ✔️
-Rekusion                                                                      ✔️
+Rekursion                                                                      ✔️
 implementieren von Daten (Wave, MP3, CSV, ect.)                               ✔️
-Biblothek einbinden (TensorFlow, SciPY, Pandas, NumPy…)                       ✔️
-datenbank
+Bibliothek einbinden (TensorFlow, SciPY, Pandas, NumPy…)                       ✔️
+Datenbank
 
-Anzeigen Abflug/Ankuft
+Anzeigen Abflug/Ankunft
 
 Tickets
