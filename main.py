@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
