@@ -1,17 +1,13 @@
 import random
 from Flughafen import Flughafen
 from Flugzeug import Flugzeug
-from Feuerwehr import Feuerwehr
 import json
 from datetime import datetime
 from flask import Flask, render_template, request
-import Utilities
+from Utilities import get_data_folder
 import os
 
 EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.randint(5,10))], 1)
-
-Feuerwehren = [Feuerwehr]
-
 
 
 def get_contents(einFlughafen):
@@ -27,7 +23,7 @@ def get_contents(einFlughafen):
     return [
         ["$Flughafen$", f"{einFlughafen}"],
         ["$Flugzeuge$", einFlughafen.get_flugzeuge()],
-        ["$FlugzeugeDropDown$", einFlughafen.get_FlugzeugeDropDown()]
+       # ["$FlugzeugeDropDown$", einFlughafen.get_FlugzeugeDropDown()]
     ]
 
 def get_Fluggesellschaft():
@@ -54,17 +50,16 @@ def render_page(contentName, text=None):
     Returns:
         str: Der gerenderte HTML-Code für die Seite.
     """
-    with open("templates/index.html", "r", encoding="utf8") as f:
+    with open(f"{get_data_folder()}/templates/index.html", "r", encoding="utf8") as f:
         result = f.read()
-    with open("templates/head.html", "r", encoding="utf8") as f:
+    with open(f"{get_data_folder()}/templates/head.html", "r", encoding="utf8") as f:
         result = result.replace("$head$", f.read())
-
     
-    with open("templates/nav.html", "r", encoding="utf8") as f:
+    with open(f"{get_data_folder()}/templates//nav.html", "r", encoding="utf8") as f:
         result = result.replace("$nav$", f.read())
 
-    if os.path.exists(f"templates/{contentName}.html"):
-        with open(f"templates/{contentName}.html", "r", encoding="utf8") as f:
+    if os.path.exists(f"{get_data_folder()}/templates/{contentName}.html"):
+        with open(f"{get_data_folder()}/templates/{contentName}.html", "r", encoding="utf8") as f:
             result = result.replace("$content$", f.read())
     else:
         result = result.replace("$content$", contentName)
@@ -87,18 +82,13 @@ def main():
         Returns:
             str: Die gerenderte HTML-Seite für die Homepage.
     """
-    
-    ''' obsolete
-    @app.route("/")
-    def home():
-        return render_page("home")
-    '''
 
     @app.route("/")
     def home():
         try:
-            with open(f"{Utilities.get_data_folder()}/data/Flugzeug.json", "r") as file:
+            with open(f"{get_data_folder()}/data/Flugzeug.json", "r") as file:
                 data = json.load(file)
+                print(type(data))
         except FileNotFoundError:
             with open(f"/data/{name}.json", "r", encoding="utf8") as f:
                 self.data = json.loads(f.read())
@@ -117,53 +107,6 @@ def main():
     @app.route("/Erweitert")
     def Erweitert():
         return "todo"
-    
-    @app.route("/Flughafen")
-    def Flughafen():
-        return render_page("Flughafen")
-
-    @app.route("/Flugzeuge")
-    def Flugzeuge():
-        return render_page("Flugzeuge")
-
-    @app.route("/Flugzeug_landen")
-    def Flugzeug_landen():
-        text = EinFlughafen.landen(Flugzeug(_passagiere=-1))
-        return render_page("FlugzeugLanden", text)
-
-    @app.route("/Flugzeug_starten")
-    def Flugzeug_starten():
-        text = EinFlughafen.start()
-        return render_page("FlugzeugStarten", text)
-
-    @app.route("/Gebaeude_reinigen")
-    def Gebaeude_reinigen():
-        text = EinFlughafen.Gebaeude_reinigen()
-        return render_page("GebaeudeReinigen", text)
-
-    @app.route("/aussteigen")
-    def aussteigen():
-        flugzeug = request.args.get('flugzeug')
-        text = ""
-        if flugzeug is not None:
-            for i in range(len(EinFlughafen.flugzeuge)):
-                if flugzeug == EinFlughafen.flugzeuge[i].name:
-                    text = EinFlughafen.aussteigen(EinFlughafen.flugzeuge[i])
-                    return render_page("umsteigen", text)
-        return render_page("aussteigen", text)
-    
-    @app.route("/umsteigen")
-    def umsteigen():
-        flugzeug = request.args.get('flugzeug')
-        text = ""
-        if flugzeug is not None:
-            for i in range(len(EinFlughafen.flugzeuge)):
-                if flugzeug == EinFlughafen.flugzeuge[i].name:
-                    text = EinFlughafen.aussteigen(EinFlughafen.flugzeuge[i])
-                    return render_page("umsteigen", text)
-        
-        return render_page("umsteigen", text)
-
     
     app.run(port=8080, debug=True)
 

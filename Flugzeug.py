@@ -30,53 +30,7 @@ class Flugzeug(Fahrzeug):
         self.fluggesellschaft = fluggesellschaft
 
     
-    ''' obsolete
-    def __add__(self, other):
-        """
-        addiert Gewicht der Flugzeuge
-        Parameter:
-            Class Flugzeug, Class Flugzeug
-        return:
-            Summe Gewicht der Flugzeuge
-        """
-        return self.gewicht + other.gewicht
-
-    def __sub__(self, other):
-        """
-        subtrahiert Passagiere der Flugzeuge
-        Parameter:
-            Class Flugzeug, Class Flugzeug
-        return:
-            Differenz Anzahl der Passagiere in den Flugzeugen
-        """
-        return self.gewicht - other.gewicht
     
-    
-    def __gt__(self, other):
-        """
-        vergleicht ob das Flugzeug besser ist
-        Parameter:
-            Class Flugzeug, Class Flugzeug
-        return:
-            bool
-        """
-        self_p = 0
-        other_p = 0
-        if self.speed_max > other.speed_max: self_p += 1
-        else: other_p += 1
-        if self.gewicht_max > other.gewicht_max: self_p += 1
-        else: other_p += 1
-        if self.passagiere_max > other.passagiere_max: self_p += 1
-        else: other_p += 1
-        if self.reichweite > other.reichweite: self_p += 1
-        else: other_p += 1
-        if self.speed_max > other.speed_max: self_p += 1
-        else: other_p += 1
-        if self.verbrauch < other.verbrauch: self_p += 1
-        else: other_p += 1
-
-        return self_p > other_p
-    '''
     def __str__(self):
         """
         Gibt eine formatierte Zeichenkette mit Informationen über das Flugzeug zurück.

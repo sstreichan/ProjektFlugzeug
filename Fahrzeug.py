@@ -1,7 +1,7 @@
 import json
 import random
 from Flughafen import Flughafen 
-import Utilities
+from Utilities import get_data_folder
 
 class Fahrzeug:
     def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
@@ -18,6 +18,8 @@ class Fahrzeug:
             Keine
         """
         try:
+            self.items = self.data.items()
+            
             if _name == "":
                 _name = random.choice(list(self.data.keys()))
 
@@ -52,8 +54,9 @@ class Fahrzeug:
             None
         """
         try:
-            with open(f"{Utilities.get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
+            with open(f"{get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
                 self.data = json.loads(f.read())
+                print(type(self.data))
         except FileNotFoundError:
             with open(f"/data/{name}.json", "r", encoding="utf8") as f:
                 self.data = json.loads(f.read())
