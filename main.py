@@ -74,7 +74,7 @@ def render_page(contentName, text=None):
 
 
 def main():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder=f"{get_data_folder()}/templates/")
 
     """
         Route für die Jeweiligen Seiten.
