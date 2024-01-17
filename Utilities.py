@@ -1,6 +1,6 @@
 import sys
 import os
-
+import json
 
 def get_data_folder():
     """
@@ -16,3 +16,21 @@ def get_data_folder():
             os.path.abspath(sys.modules['__main__'].__file__)
         )
     return data_folder_path
+
+
+def loadJSON(name):
+    """
+    Lädt Daten aus einer JSON-Datei und aktualisiert das 'data'-Attribut der Klasse.
+
+    Args:
+        name (str): Der Name der JSON-Datei (ohne die Dateierweiterung).
+
+    Returns:
+        None
+    """
+    try:
+        with open(f"{get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
+            return json.loads(f.read())
+    except FileNotFoundError:
+        with open(f"/data/{name}.json", "r", encoding="utf8") as f:
+            returnjson.loads(f.read())

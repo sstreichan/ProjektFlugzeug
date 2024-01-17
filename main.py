@@ -1,5 +1,4 @@
 import random
-from Flughafen import Flughafen
 from Flugzeug import Flugzeug
 import json
 from datetime import datetime
@@ -7,7 +6,7 @@ from flask import Flask, render_template, request
 from Utilities import get_data_folder
 import os
 
-EinFlughafen = Flughafen("IBB", [Flugzeug(_passagiere=-1) for i in range(random.randint(5,10))], 1)
+
 
 
 def get_contents(einFlughafen):
@@ -88,7 +87,6 @@ def main():
         try:
             with open(f"{get_data_folder()}/data/Flugzeug.json", "r") as file:
                 data = json.load(file)
-                print(type(data))
         except FileNotFoundError:
             with open(f"/data/{name}.json", "r", encoding="utf8") as f:
                 self.data = json.loads(f.read())

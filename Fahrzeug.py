@@ -41,80 +41,8 @@ class Fahrzeug:
             self.pos = random.choice(Flughafen.parkpos)
         except KeyError:
             print(f"Fahrzeug {_name} nicht in der Datenbank")
-
-
-    def load(self, name):
-        """
-        Lädt Daten aus einer JSON-Datei und aktualisiert das 'data'-Attribut der Klasse.
-
-        Args:
-            name (str): Der Name der JSON-Datei (ohne die Dateierweiterung).
-
-        Returns:
-            None
-        """
-        try:
-            with open(f"{get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
-                self.data = json.loads(f.read())
-                print(type(self.data))
-        except FileNotFoundError:
-            with open(f"/data/{name}.json", "r", encoding="utf8") as f:
-                self.data = json.loads(f.read())
     
-    ''' obsolete 
-    def beschleunigen(self, wert):
-        """
-        Erhöht die aktuelle Geschwindigkeit des Flugzeugs um den angegebenen Wert.
-
-        Parameter:
-            wert (int): Der Wert, um den die Geschwindigkeit erhöht werden soll.
-        """
-        self.speed += wert
-
-    def bremsen(self, wert):
-        """
-        Verringert die aktuelle Geschwindigkeit des Flugzeugs um den angegebenen Wert.
-
-        Parameter:
-            wert (int): Der Wert, um den die Geschwindigkeit verringert werden soll.
-        """
-        self.speed -= wert
-
-    def passagiere_einsteigen(self, wert):
-        """
-        Erhöht die Anzahl der Passagiere und das gewicht des Flugzeugs um den angegebenen Wert.
-
-        Parameter:
-            wert (int): Die Anzahl der Passagiere, die hinzugefügt werden sollen.
-
-        Raises:
-            Exception (Ausnahme): Wenn die maximale Anzahl der Fluggäste überschritten wird.
-        """
-        if (
-            self.passagiere + wert < self.passagiere_max
-            and self.gewicht + round(wert * 81.6) < self.gewicht_max
-        ):
-            self.passagiere += wert
-            self.gewicht += round(wert * 81.6)
-        else:
-            return f"das flugzeug ist voll! {self._passagiere + wert}/{self.passagiere_max}"
-
-    def passagiere_aussteigen(self, wert):
-        """
-        Verringert die Anzahl der Passagiere und das gewicht des Flugzeugs um den angegebenen Wert.
-
-        Parameter:
-            wert (int): Die Anzahl der Passagiere, die abgezogen werden sollen.
-
-        Raises:
-            Exception (Ausnahme): Wenn die minimale Anzahl der Fluggäste überschritten wird.
-        """
-        if self.passagiere - wert >= 0:
-            self.passagiere -= wert
-            self.gewicht -= round(wert * 81.6)
-        else:
-            raise Exception("nicht genug passagiere im flugzeug!")
-    '''
+    
     def __str__(self):
         """
         Gibt eine formatierte Zeichenkette (String) zurück, die Informationen über das Objekt enthält.

@@ -1,4 +1,5 @@
 from Fahrzeug import Fahrzeug
+from Utilities import *
 
 class Flugzeug(Fahrzeug):
     anzahl_flugzeuge = 0  # Klassenvariablen
@@ -17,7 +18,7 @@ class Flugzeug(Fahrzeug):
         Returns:
             None
         """
-        self.load(__name__)
+        self.data = loadJSON(__name__)
         super().__init__(_name, _speed, _passagiere, _gewicht)
         
         self.maxFlughoehe = int(self.data["maxFlughoehe"])
