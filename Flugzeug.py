@@ -1,6 +1,6 @@
 from Fahrzeug import Fahrzeug
 from Utilities import *
-
+import random
 class Flugzeug(Fahrzeug):
     anzahl_flugzeuge = 0  # Klassenvariablen
     anzahl_passagiere_gesamt = 0
@@ -25,13 +25,25 @@ class Flugzeug(Fahrzeug):
         Flugzeug.anzahl_flugzeuge += 1
         Flugzeug.anzahl_passagiere_gesamt += _passagiere
         
-        self.flugnummer = flugnummer
+        self.flugnummer = random.randint(100000, 999999)
         self.abflugzeit = abflugzeit
         self.ankunftzeit = ankunftzeit
-        self.fluggesellschaft = fluggesellschaft
+        self.fluggesellschaft = self.get_Fluggesellschaft()
+        
+        
+    def get_Fluggesellschaft(self):
+        Fluggesellschaften = ["SkyLink Airways", "Horizon Wings",
+            "CelestialJet",
+            "AeroVista Airlines",
+            "StarLift Air",
+            "CloudSail Airlines",
+            "BlueSky Express",
+            "SolarWings International",
+            "VelocityAir",
+            "NovaJet Airways"
+        ]
+        return random.choice(Fluggesellschaften)
 
-    
-    
     def __str__(self):
         """
         Gibt eine formatierte Zeichenkette mit Informationen über das Flugzeug zurück.

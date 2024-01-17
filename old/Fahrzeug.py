@@ -1,3 +1,5 @@
+self.pos = random.choice(Flughafen.parkpos)
+            
 ''' obsolete 
     def beschleunigen(self, wert):
         """
