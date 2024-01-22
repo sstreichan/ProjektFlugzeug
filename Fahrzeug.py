@@ -1,9 +1,10 @@
 import json
 import random
-from Flughafen import Flughafen 
 from Utilities import get_data_folder
+from abc import ABC, abstractmethod
 
-class Fahrzeug:
+
+class Fahrzeug(ABC):
     def __init__(self, _name="", _speed=0, _passagiere=0, _gewicht=0):
         """
         Initialisiert eine neue Instanz der Klasse.
@@ -17,9 +18,7 @@ class Fahrzeug:
         Rückgabe:
             Keine
         """
-        try:
-            self.items = self.data.items()
-            
+        try:           
             if _name == "":
                 _name = random.choice(list(self.data.keys()))
 
@@ -38,10 +37,13 @@ class Fahrzeug:
             self.gewicht = _gewicht
             self.passagiere = 0
 
-            self.pos = random.choice(Flughafen.parkpos)
+
         except KeyError:
             print(f"Fahrzeug {_name} nicht in der Datenbank")
     
+    @abstractmethod
+    def loadJSON(name):
+        pass    
     
     def __str__(self):
         """

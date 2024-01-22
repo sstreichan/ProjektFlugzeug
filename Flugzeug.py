@@ -1,5 +1,7 @@
 from Fahrzeug import Fahrzeug
 from Utilities import *
+import random
+import json
 
 class Flugzeug(Fahrzeug):
     anzahl_flugzeuge = 0  # Klassenvariablen
@@ -18,20 +20,49 @@ class Flugzeug(Fahrzeug):
         Returns:
             None
         """
-        self.data = loadJSON(__name__)
+        self.data = self.loadJSON(__name__)
         super().__init__(_name, _speed, _passagiere, _gewicht)
         
         self.maxFlughoehe = int(self.data["maxFlughoehe"])
         Flugzeug.anzahl_flugzeuge += 1
         Flugzeug.anzahl_passagiere_gesamt += _passagiere
         
-        self.flugnummer = flugnummer
+        self.flugnummer = random.randint(100000, 999999)
         self.abflugzeit = abflugzeit
         self.ankunftzeit = ankunftzeit
-        self.fluggesellschaft = fluggesellschaft
+        self.fluggesellschaft = self.get_Fluggesellschaft()
+        
+    def loadJSON(self, name):
+        """
+        Lädt Daten aus einer JSON-Datei und aktualisiert das 'data'-Attribut der Klasse.
+
+        Args:
+            name (str): Der Name der JSON-Datei (ohne die Dateierweiterung).
+
+        Returns:
+            None
+        """
+        try:
+            with open(f"{get_data_folder()}/data/{name}.json", "r", encoding="utf8") as f:
+                return json.loads(f.read())
+        except FileNotFoundError:
+            with open(f"/data/{name}.json", "r", encoding="utf8") as f:
+                returnjson.loads(f.read())
 
     
-    
+    def get_Fluggesellschaft(self):
+        Fluggesellschaften = ["SkyLink Airways", "Horizon Wings",
+            "CelestialJet",
+            "AeroVista Airlines",
+            "StarLift Air",
+            "CloudSail Airlines",
+            "BlueSky Express",
+            "SolarWings International",
+            "VelocityAir",
+            "NovaJet Airways"
+        ]
+        return random.choice(Fluggesellschaften)
+
     def __str__(self):
         """
         Gibt eine formatierte Zeichenkette mit Informationen über das Flugzeug zurück.
