@@ -91,13 +91,17 @@ def main():
     def home2():
  
         data = {}
-        for i in range(1):
+        for i in range(random.randint(10, 15)):
             newFlugzeug = Flugzeug()
-            data[f"FG543654"] = {
+            fluggessellschaft, flugnummer = get_rnd_fluggesellschaft()
+            data[f"{flugnummer}"] = {
                 "flugdaten": {
                     "abflugzeit": get_rnd_datetime(),
                     "ankunftzeit": get_rnd_datetime(),
-                    "fluggesellschaft": "123"
+                    "fluggesellschaft": fluggessellschaft,                    
+                    "gate": get_rnd_gate(),
+                    "status": get_rnd_Status(),
+                    "ziel": get_rnd_ziel(),
                 }
             }
 
