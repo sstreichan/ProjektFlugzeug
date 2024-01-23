@@ -4,7 +4,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('./data/', './data/')],
+    datas=[('./data/', './data/'), ('./templates/', './templates/')],
     hiddenimports=[],
     runtime_hooks=[],
     excludes=[],
