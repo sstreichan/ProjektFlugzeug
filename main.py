@@ -7,23 +7,6 @@ from Utilities import *
 import os
 
 
-def get_contents(einFlughafen):
-    """
-    Gibt eine Liste von Inhalten zurück, die in der HTML-Seite eingefügt werden sollen.
-
-    Args:
-        einFlughafen (Flughafen): Das Flughafen-Objekt, dessen Informationen in die Seite eingefügt werden sollen.
-
-    Returns:
-        list: Eine Liste von Listen, wobei jede innere Liste den Platzhalter und den zugehörigen Inhalt enthält.
-    """
-    return [
-        ["$Flughafen$", f"{einFlughafen}"],
-        ["$Flugzeuge$", einFlughafen.get_flugzeuge()],
-       # ["$FlugzeugeDropDown$", einFlughafen.get_FlugzeugeDropDown()]
-    ]    
-
-
 def render_page(contentName, text=None):
     """
     Rendert eine HTML-Seite basierend auf Vorlagen und Inhalten.
@@ -41,7 +24,7 @@ def render_page(contentName, text=None):
         result = result.replace("$head$", f.read())
     
     with open(f"{get_data_folder()}/templates//nav.html", "r", encoding="utf8") as f:
-        result = result.replace("$nav$", f.read())
+        result = result.replace("$nav$", f.read())    
 
     if os.path.exists(f"{get_data_folder()}/templates/{contentName}.html"):
         with open(f"{get_data_folder()}/templates/{contentName}.html", "r", encoding="utf8") as f:
@@ -49,15 +32,15 @@ def render_page(contentName, text=None):
     else:
         result = result.replace("$content$", contentName)
 
-        
-
     if text is not None:
         result = result.replace("$text$", text)
+    
+    with open(f"{get_data_folder()}/templates/foot.html", "r", encoding="utf8") as f:
+        result = result.replace("$head$", f.read())
+        
     return result
 
-'''for content in get_contents(null):
-        result = result.replace(content[0], content[1].replace("\n", "<br \>"))
-        result = result.replace(content[0], content[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"))    '''
+
 def main():
     app = Flask(__name__, template_folder=f"{get_data_folder()}/templates/")
 
@@ -70,8 +53,8 @@ def main():
     @app.route("/old")
     def home():
         try:
-            with open(f"{get_data_folder()}/data/Flugzeug.json", "r") as file:
-                data = json.load(file)
+            with open(f"{get_data_folder()}/data/Flugzeug.json", "r") as f:
+                data = json.load(f)
         except FileNotFoundError:
             with open(f"/data/{name}.json", "r", encoding="utf8") as f:
                 data = json.loads(f.read())
@@ -105,8 +88,8 @@ def main():
                 }
             }
 
-        #sorted_data = dict(sorted(data.items(), key=lambda item: item[1]["flugdaten"]["abflugzeit"]))
-        result = render_template("Flugplan.html", data=data)
+        sorted_data = dict(sorted(data.items(), key=lambda item: item[1]["flugdaten"]["abflugzeit"]))
+        result = render_template("Flugplan.html", data=sorted_data)
         return render_page(result)
     
     @app.route("/Erweitert")
