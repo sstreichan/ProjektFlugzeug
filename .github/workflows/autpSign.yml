@@ -1,0 +1,19 @@
+name: Test workflow for example 01
+
+on:
+  push:
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build docker image
+        run: ./bin/build.sh
+
+      - name: Run example
+        run: |
+          docker run --rm \
+            --env INPUT_REPO_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            pygithub sign_commit_using_github_api.py
