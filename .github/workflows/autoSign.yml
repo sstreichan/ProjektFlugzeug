@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build docker image
-        run: src/build.sh
+        run: chmod +x src/build.sh \
+             | src/build.sh
 
       - name: Run example
         run: |
