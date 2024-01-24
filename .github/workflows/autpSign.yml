@@ -1,4 +1,4 @@
-name: Test workflow for example 01
+name: autoSign
 
 on:
   push:
@@ -16,4 +16,4 @@ jobs:
         run: |
           docker run --rm \
             --env INPUT_REPO_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            pygithub sign_commit_using_github_api.py
+            pygithub src/sign_commit_using_github_api.py
